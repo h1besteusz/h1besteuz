@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Для тебя моя любовь </title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        body {
+            background: #fff0f3; /* Нежный фон */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 300px;
+            height: 450px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            color: #333;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ffccd5;
+        }
+
+        /* Стиль для фото внутри карточки */
+        .swiper-slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            pointer-events: none; /* Чтобы картинка не мешала клику */
+        }
+
+        .swiper-slide p {
+            font-size: 16px;
+            text-align: center;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* Подсказка внизу */
+        .hint {
+            position: absolute;
+            bottom: 30px;
+            color: #ff4d6d;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="photo1.jpg" alt="Фото 1">
+                <h3>Для тебя зайчочек</h3>
+                <p>Нажми на меня, чтобы перелистнуть...</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="photo2.jpg" alt="Фото 2">
+                <h3>Привет моя радость</h3>
+                <p>Просто хочу поднять тебе настроение❤️</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="photo3.jpg" alt="Фото 3">
+                <h3>Ты сейчас возможно зла и в гневе</h3>
+                <p>Но я всеравно хочу отправить это❤️</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="photo4.jpg" alt="Фото 4">
+                <h3>Просто я тебя люблю сильно</h3>
+                <p>Можешь не отвечать, просто послушай</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo5.jpg" alt="Фото 5">
+                <h3>Ты у меня самая лучшая</h3>
+                <p>Самая сильная, и самая кусная</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo6.jpg" alt="Фото 6">
+                <h3>Не печался котенок</h3>
+                <p>Все наладится, я с тобой</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo7.jpg" alt="Фото 7">
+                <h3>Иногда бывают неудачи</h3>
+                <p>Иногда бывают грустные дни</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo8.jpg" alt="Фото 8">
+                <h3>Но не надо расстраиваться</h3>
+                <p>Не надо грустить</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo9.jpg" alt="Фото 9">
+                <h3>Все будет харашо</h3>
+                <p>Все будет замечателна</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo10.jpg" alt="Фото 10">
+                <h3>Смотри Филя какая</h3>
+                <p>Кошечка наша</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo11.jpg" alt="Фото 11">
+                <h3>И твиксик тут тоже</h3>
+                <p>Котик наш</p>
+            </div>
+			<div class="swiper-slide">
+                <img src="photo12.jpg" alt="Фото 12">
+                <h3>И последнее</h3>
+                <p>Сладких снов, спокойной ночи, спи крепко, очень тебя люблю❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hint">Нажимай на карточки</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Инициализация
+        const swiper = new Swiper('.swiper', {
+            effect: 'cards',
+            grabCursor: true,
+            // Чтобы точно листалось на смартфонах по нажатию:
+            on: {
+                tap: function () {
+                    if (this.isEnd) {
+                        this.slideTo(0); // Если конец, то в начало
+                    } else {
+                        this.slideNext(); // Листаем вперед
+                    }
+                },
+            },
+        });
+    </script>
+</body>
+</html>
